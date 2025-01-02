@@ -2,6 +2,14 @@
 src = "src"
 out = "out"
 libs = ["dependencies"]
+solc_version = "0.8.28"
+extra_output = [
+  "abi",
+  "evm.bytecode",
+  "evm.deployedBytecode",
+  "evm.methodIdentifiers",
+  "metadata"
+]
 
 [soldeer]
 remappings_generate = true
