@@ -2,9 +2,6 @@
 src = "src"
 out = "out"
 libs = ["dependencies"]
-solc_version = "0.8.28"
-extra_output = ["metadata"]
-extra_output_files = ["metadata"]
 
 [soldeer]
 remappings_generate = true
