@@ -2,6 +2,7 @@
 src = "src"
 out = "out"
 libs = ["dependencies"]
+evm_version = "shanghai"
 
 [soldeer]
 remappings_generate = true
