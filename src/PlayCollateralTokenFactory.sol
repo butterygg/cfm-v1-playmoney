@@ -11,7 +11,7 @@ contract PlayCollateralTokenFactory {
 
     /// @notice Emitted when a new PlayCollateralToken is created.
     /// @param token The address of the newly deployed token.
-    event PlayCollateralTokenCreated(address indexed token);
+    event PlayCollateralTokenCreated(address indexed token, address deployer);
 
     /// @param conditionalTokens The address of the ConditionalTokens contract that each token should trust.
     constructor(address conditionalTokens) {
@@ -29,7 +29,7 @@ contract PlayCollateralTokenFactory {
         returns (address)
     {
         PlayCollateralToken newToken = new PlayCollateralToken(name, symbol, initialSupply, CONDITIONAL_TOKENS, owner);
-        emit PlayCollateralTokenCreated(address(newToken));
+        emit PlayCollateralTokenCreated(address(newToken), msg.sender);
         return address(newToken);
     }
 }
