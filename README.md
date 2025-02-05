@@ -16,8 +16,10 @@ This ensures no free trading occurs—tokens can’t flow to arbitrary addresses
 
 - **Constructor**: Mints an initial supply of tokens to the `OWNER`.
 - **Transfer Restrictions**:
-  - Transfers from `OWNER` to `CONDITIONAL_TOKENS` are allowed. 
-  - Transfers from `CONDITIONAL_TOKENS` to `OWNER` are allowed (only when the contract calls `transferFrom`).
+  - Transfers from `OWNER` to any address are allowed.
+  - Transfers to `OWNER` from any address are allowed.
+  - Transfers from `CONDITIONAL_TOKENS` to any address are allowed.
+  - Transfers to `CONDITIONAL_TOKENS` from any address are allowed (only when the contract calls `transferFrom`).
   - Any other transfers revert with an `InvalidPlayTokenTransfer` error.
 - **Minting & Burning**:
   - Minting occurs in the constructor (or if you extend the logic). 
